@@ -1,0 +1,83 @@
+name: General Issue
+description: Create a new task, bug report, or feature request
+title: "[Brief description]"
+labels: []
+projects: ["tisa-pixel/4"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to create any type of issue - bugs, features, tasks, questions, etc.
+
+  - type: dropdown
+    id: project
+    attributes:
+      label: Project
+      description: Which project does this issue belong to?
+      options:
+        - tech-stack
+        - cgm-lead-generation
+        - collective-genius-scraper
+        - hometrust-colorado
+        - propertyradar
+        - tisa-portfolio
+        - business-docs
+        - deal-desk
+        - voice-lead-bot
+        - email-authentication
+        - claude-performance-tracker
+        - other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Issue Type
+      description: What kind of issue is this?
+      options:
+        - Bug
+        - Feature/Enhancement
+        - Task/Todo
+        - Documentation
+        - Question
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent is this?
+      options:
+        - 🔴 High - Urgent
+        - 🟡 Medium - Important
+        - 🟢 Low - Nice to have
+        - ⚪ None/Unsure
+      default: 3
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Provide details about this issue
+      placeholder: |
+        What needs to be done?
+        Why is this important?
+        Any relevant context or links?
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Tasks / Acceptance Criteria
+      description: Optional checklist of tasks or what "done" looks like
+      placeholder: |
+        - [ ] Task 1
+        - [ ] Task 2
+        - [ ] Task 3
+    validations:
+      required: false
